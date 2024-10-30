@@ -3,7 +3,7 @@
 
 DOCKER_TAG := latest
 build: ## Build docker image to deploy
-	docker build -t acmk189/todo_app_REST_API:${DOCKER_TAG} \
+	docker build -t acmk189/todo_app_rest_api:${DOCKER_TAG} \
 		--target deploy ./
 
 build-local: ## Build docker image to local development
