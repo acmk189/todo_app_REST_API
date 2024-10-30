@@ -43,5 +43,4 @@ func (s *Server) Run(ctx context.Context) error {
 	}
 	// グレースフルシャットダウンを待機
 	return eg.Wait()
-
 }
