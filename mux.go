@@ -16,7 +16,6 @@ func NewMux() http.Handler {
 		// 静的解析エラーを回避するため戻り値を無視
 		_, _ = w.Write([]byte(`{"status": "ok"}`))
 	})
-	return mux
 	v := validator.New()
 	at := &handler.AddTask{Store: store.Tasks, Validator: v}
 	mux.Post("/tasks", at.ServeHTTP)
