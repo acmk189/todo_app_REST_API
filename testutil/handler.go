@@ -26,6 +26,17 @@ func AssertJSON(t *testing.T, want, got []byte) {
 	}
 }
 
+// AssertResponceはHTTPレスポンスをアサートするテストヘルパー関数です。
+// レスポンスのステータスコードが期待されるステータスと一致するか、レスポンスボディが期待されるボディと一致するかを確認します。
+// レスポンスボディが空でない場合、AssertJSONを呼び出して期待されるJSONボディと実際のJSONボディを比較します。
+//
+// パラメータ:
+//   - t: テストの失敗を報告するために使用されるテストオブジェクト。
+//   - got: チェックされる実際のHTTPレスポンス。
+//   - status: 期待されるHTTPステータスコード。
+//   - body: 期待されるレスポンスボディ。
+//
+// この関数は、テストが終了した後にレスポンスボディが閉じられることも保証します。
 func AssertResponce(t *testing.T, got *http.Response, status int, body []byte) {
 	t.Helper()
 
